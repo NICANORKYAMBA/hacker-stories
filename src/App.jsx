@@ -1,10 +1,5 @@
 import * as React from 'react';
 
-const welcome = {
-	greeting: 'Hey Lad!, ',
-	title: 'Learn React',
-};
-
 const list = [
 	{
 		title: 'React',
@@ -24,21 +19,21 @@ const list = [
 	},
 ];
 
-function getTitle(title) {
-	return title;
-}
-
 function App() {
 	return (
 		<div>
-		<h1>
-		{welcome.greeting} {welcome.title}
-		</h1>
-		<h2>
-		Hello {getTitle('React')}
-		</h2>
+		<h1>My Hacker Stories</h1>
+
 		<label htmlFor="search">Search: </label>
 		<input id="search" type="text" />
+
+		<hr />
+
+		<ul>
+		{list.map((item) => {
+			return <li>{item.url}</li>;
+		})}
+		</ul>
 		</div>
 	);
 }
